@@ -1,0 +1,54 @@
+// Note: javascript first initilized all the functions
+// then start executing the code from the first line to 
+// the last line, but it is fucntion is assigned to some 
+// variable then it wil not work.
+
+// with function expression we can declare a function and
+// assign to it at runtime and also make it availabe globally
+
+
+// global variable
+let name = "john";
+
+// inline function
+const getNickName = () => "johnny";
+const sum = (a: number, b: number) => a + b; 
+
+// same vairable shadowed the outer variable
+// default parameter value is 20
+// ?? operator is used to check if the value is null or undefined, 
+// if it is, it will return true
+const fn = (age = 20, nickname = getNickName(), isValid: any) => {
+    // local variable
+    let name = "peter";
+    console.log(name, age, nickname, isValid ?? true);
+}
+
+const checkAge = (age: number) => {
+    return age > 18 ? true : confirm("Are you sure you want to continue?");
+}
+
+const pow = (a: number, b: number) => {
+    return a ** b;
+}
+
+
+console.log(name);
+fn(10, undefined, undefined);
+console.log(name);
+console.log(sum(10, 20));
+
+
+// If a function does not return a value, it is the same as if it returns undefined
+const doNothing = () => {}
+console.log(doNothing() === undefined); 
+
+checkAge(20);
+pow(3, 2);
+
+
+// auto calling function
+((a: number, b: number) => {
+    console.log(a + b);
+})(10, 10);
+
