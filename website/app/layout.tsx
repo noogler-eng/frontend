@@ -10,7 +10,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <body className="h-full w-full flex flex-row">
           <AuthNavigationWrapper>
             <Navbar />
-            <div className="flex-1 p-8">
+            <div className="flex-1">
               {children}
             </div>
           </AuthNavigationWrapper>
