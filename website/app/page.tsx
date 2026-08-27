@@ -1,5 +1,5 @@
-export default function Home(){
-  return <div>
-    Home page
-  </div>
+"use client";
+
+export default function Home() {
+  return <div>Home page</div>;
 }
