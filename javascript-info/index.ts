@@ -109,12 +109,40 @@ myUser.sayHi()
 // create objects and it is called with the new keyword. The new keyword creates a new empty 
 // object and sets the this value to that object. The constructor function can have properties 
 // and methods that are assigned to the new object.
-function MyFund(name: string) {
+function MyFund(name: string): void {
     this.name = name;
     this.isAdmin = false;
+    this.sayHi = function() {
+        console.log("Hello", this.name)
+    }
 }
 
 let myFund = new MyFund("John")
 console.log(myFund, typeof myFund)
 console.log(myFund.name)
 console.log(myFund.isAdmin)
+myFund.sayHi()
+
+
+
+// deep look on prototype
+// we can't directly access the prototype of an object, but we can use Object.getPrototypeOf() 
+// method to get the prototype of an object. The prototype is an object that is associated with
+// every function and object in JavaScript. It is used to share properties and methods between objects. 
+// The prototype of an object can be accessed using the __proto__ property or the Object.getPrototypeOf() 
+// method. 
+const person: any = {
+    name: "John",
+}
+
+console.log(person)
+console.log(person.toString())
+Object.getPrototypeOf(person).sayHi = function(){
+    console.log("Hello", this.name)
+}
+person.sayHi()
+
+person.__proto__.sayHello = function(){
+    console.log("Hello", this.name)
+}
+person.sayHello()
