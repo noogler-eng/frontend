@@ -1,22 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1A1917;
-  --background-secondary: #24221F;
-  --background-tertiary: #2D2A26;
+  /* Backgrounds */
+  --background: #1a1917;
+  --background-secondary: #211f1c;
+  --background-tertiary: #292723;
 
-  --foreground: #E8E5DF;
-  --foreground-secondary: #B8B3AA;
+  /* Text */
+  --foreground: #e8e5df;
+  --foreground-secondary: #b8b3aa;
   --foreground-muted: #858078;
 
-  --accent: #D97757;
-  --accent-hover: #E68A68;
-  --accent-light: #F0A080;
+  /* Brand / Accent */
+  --primary: #d97757;
+  --primary-hover: #e68a68;
+  --primary-light: #f0a080;
 
-  --border: #3A3732;
-  --input-background: #211F1C;
+  /* UI */
+  --border: #3a3732;
+  --input: #24221f;
+  --card: #24221f;
 
-  --success: #7FAE8A;
-  --warning: #D9A441;
-  --error: #D96B5F;
+  /* Status */
+  --success: #7fae8a;
+  --warning: #d9a441;
+  --error: #d96b5f;
+
+  /* Radius */
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+
+.card {
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.googleBtnLogin {
+  background: var(--background-secondary);
+  color: var(--primary);
 }

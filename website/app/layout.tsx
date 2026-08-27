@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
-import "./globals.css";
 import AuthWrapper from "@/wrappers/AuthWrapper";
 import AuthNavigationWrapper from "@/wrappers/AuthNavigationWrapper";
+import "./globals.css";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
