@@ -146,3 +146,39 @@ person.__proto__.sayHello = function(){
     console.log("Hello", this.name)
 }
 person.sayHello()
+
+
+
+// optional chanining
+// call any function when it is exists
+let userGuest: any = {}
+userGuest.admin?.();
+
+
+// symbol
+// not useful as mostly used for debugging pupose
+let id1 = Symbol("id1")
+let id2 = Symbol("id2")
+console.log(id1, id2)
+console.log(id1 == id2)
+
+
+// primitives uses wrapper functions
+let str = "hello"
+// new String(str) object will be created which has a prototype function
+// so we can call the prototype function on the primitive value as toUpperCase
+// when this function is called, the primitive value is converted to an object and 
+// then the function is called on that object. after that object is destroyed and the 
+// primitive value is returned. so we can call the prototype function on the primitive 
+// value as toUpperCase
+let strInUppercase = str.toUpperCase()
+console.log(strInUppercase, typeof strInUppercase)
+console.log(str, typeof str) 
+
+
+let zero: any = new Number(0)
+console.log(zero, typeof zero, zero.valueOf())
+if(zero) console.log("zero is truthy")
+let number = new Number("123")
+console.log(number, typeof number)
+
