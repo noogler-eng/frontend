@@ -16,10 +16,10 @@ export default function AuthNavigationWrapper({
 
     if (status === "authenticated") {
       navigation.replace("/dashboard");
-    } else if(status === "unauthenticated") {
+    } else if (status === "unauthenticated") {
       navigation.replace("/");
     }
   }, [status, navigation]);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 }

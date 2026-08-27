@@ -6,14 +6,16 @@ import "./globals.css";
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className="min-h-full flex flex-col">
-        <AuthWrapper>
+      <AuthWrapper>
+        <body className="h-full w-full flex flex-row">
           <AuthNavigationWrapper>
             <Navbar />
-            <div>{children}</div>
+            <div className="flex-1 p-8">
+              {children}
+            </div>
           </AuthNavigationWrapper>
-        </AuthWrapper>
-      </body>
+        </body>
+      </AuthWrapper>
     </html>
   );
 }
