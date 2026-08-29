@@ -131,5 +131,59 @@ SELECT brand, COUNT(brand), FLOOR(AVG(price)) as AVG FROM cars
 WHERE sold IS NOT FALSE
 GROUP BY brand;
 
+-- HAVING
+-- use having with group by
+SELECT brand, COUNT(brand), FLOOR(AVG(price)) as AVG FROM cars
+WHERE sold IS NOT FALSE
+GROUP BY brand
+HAVING COUNT(brand) > 1;
+
+SELECT COUNT(year) as car_count, year, max(price), min(price) FROM cars
+WHERE sold IS TRUE
+GROUP BY year
+HAVING COUNT(year) > 1
+ORDER BY car_count;
+
+SELECT brand, model, year FROM cars
+WHERE sold IS FALSE
+ORDER BY year
+LIMIT 5;
+
+SELECT color, COUNT(color) FROM cars
+WHERE sold IS FALSE
+GROUP BY color
+HAVING COUNT(color) > 2
+ORDER BY COUNT(color) DESC;
 
 
+-- DML
+-- INSERT
+INSERT INTO cars (
+    brand, model, year, price, color, condition, sold
+) VALUES (
+    'Ford', 'Escort RS2000', 1978, 39000, 'blue', 4, FALSE
+), (
+    'Aston Martin', 'V8 Vantage', 1977, 145000, 'dark green', 5, FALSE
+)
+
+
+-- UPDATE
+UPDATE cars 
+WHERE brand = 'Ford' AND model = 'Escort RS2000'
+SET sold = TRUE;
+
+UPDATE cars 
+SET condition = 5, price = 465000
+WHERE id = 14;
+
+UPDATE cars
+SET condition = 1, price = 10000
+WHERE brand = 'Porsche'
+AND sold IS FALSE;
+
+-- DELETE
+DELETE FROM cars
+WHERE condition = 0;
+
+DELETE FROM cars
+WHERE sold IS TRUE;
