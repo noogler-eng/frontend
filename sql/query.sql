@@ -91,3 +91,45 @@ ORDER BY brand DESC, year;
  
 SELECT brand, model, color, condition, price FROM cars
 ORDER BY condition DESC, price;
+
+-- LIMIT
+SELECT brand, model, color, condition, price FROM cars
+ORDER BY price DESC
+LIMIT 1;
+
+SELECT brand, model, color, condition, price FROM cars
+WHERE color LIKE '%red%'
+AND sold IS FALSE
+ORDER BY price
+LIMIT 5;
+
+-- aggregator function 
+-- converting multiple values into a single values
+SELECT COUNT(*) as unsold FROM cars
+WHERE sold IS TRUE;
+
+SELECT SUM(price) as total_earnings FROM cars
+WHERE sold is TRUE;
+
+SELECT MAX(price) as most_expensive FROM cars
+WHERE sold is TRUE;
+
+SELECT FLOOR(AVG(price)) as avergae_price_of_betley FROM cars
+WHERE brand = 'Bentley';
+
+SELECT CIEL(AVG(price)) AS avg, MIN(price) AS min, MAX(price) as max FROM cars
+WHERE sold IS TRUE;
+
+-- GROUP BY
+SELECT brand, COUNT(brand) as brand_count FROM cars
+GROUP BY brand;
+
+SELECT condition, COUNT(condition) FROM cars
+GROUP BY condition;
+
+SELECT brand, COUNT(brand), FLOOR(AVG(price)) as AVG FROM cars
+WHERE sold IS NOT FALSE
+GROUP BY brand;
+
+
+
