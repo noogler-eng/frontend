@@ -79,3 +79,15 @@ AND brand != "Ferrari"
 AND sold IS FALSE;
 
 -- ORDER BY
+-- default sorting in alphabetical manner
+SELECT brand, model, color, condition, price FROM cars
+ORDER BY brand;
+-- sorting in the desc order
+SELECT brand, model, color, condition, price FROM cars
+ORDER BY brand DESC;
+-- sorting in the desc order by brand and in asec by year
+SELECT brand, model, color, condition, price FROM cars
+ORDER BY brand DESC, year;
+ 
+SELECT brand, model, color, condition, price FROM cars
+ORDER BY condition DESC, price;
