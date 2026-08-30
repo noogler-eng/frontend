@@ -46,6 +46,7 @@ const App = () => {
             fontSize: 20,
             fontWeight: 'bold',
         }}>Count: {count}</Text>
+        {/* inline styles reprocessed on every render */}
         <Button title="Increment" onPress={() => setCount(count + 1)} style={styles.Button} disabled={count >= 10} />
 
         <TextInput
@@ -77,10 +78,43 @@ const App = () => {
 
 // no css, cascading css, or psudo class selectors in react native, 
 // only inline styles or StyleSheet.create
+// takes plane object of css properties and returns a 
+// StyleSheet object that can be used in the component 
+// (having ids for each style)
+// id is used for reference so this style object is used on every render, 
+// instead of creating a new object every time
 const styles = StyleSheet.create({
     Button: {
         color: 'blue',
         backgroundColor: 'lightgray',
+    },
+    container: {
+        flex: 1,
+        // coloumn by default
+        flexDirection: 'row',
+        // alignment ALONG the main axis
+        justifyContent: 'center',
+        // alignment ACROSS the main axis (cross axis)
+        alignItems: 'center',
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    // flex: N distributes remaining space proportionally, like CSS flex-grow
+    flex: {
+        flex: 1,
+    },
+    box: {
+        width: 100, height: 100,
+        padding: 10, margin: 10, paddingHorizontal: 20, marginVertical: 30,
+        backgroundColor: 'lightblue', borderColor: 'blue', borderWidth: 2, borderRadius: 10,
+        shadowColor: 'black', shadowOffset: { width: 5, height: 5 }, 
+        shadowOpacity: 0.5, shadowRadius: 10,
+        elevation: 5,
+        fontSize: 16, fontWeight: 'bold', color: 'darkblue', textAlign: 'center', 
+        textAlignVertical: 'center',
     }
 })
 
