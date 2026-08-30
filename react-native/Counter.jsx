@@ -76,6 +76,10 @@ const App = () => {
     </View>
 }
 
+// some styling properties are different for android and ios
+// like shadowColor, shadowOffset, shadowOpacity, shadowRadius are for ios only
+// elevation is for android only
+
 // no css, cascading css, or psudo class selectors in react native, 
 // only inline styles or StyleSheet.create
 // takes plane object of css properties and returns a 
