@@ -79,6 +79,19 @@ class Rectangle {
   Rectangle.square(double size) : this(size, size);
 }
 
+class User {
+  final String name;
+  final String? nickname;
+  User(this.name, {this.nickname});
+}
+
+class ApiClient {
+  // late — deferred initialization, and its real danger
+  late final String baseUrl;
+  void configure(String url) {
+    baseUrl = url;
+  }
+}
 
 void main() {
   const p1 = ImmutablePoint(3, 4);
@@ -103,4 +116,20 @@ void main() {
   final a2 = Logger('A');
   print(identical(a, a2));
   print(identical(a, b));
+
+  String name = 'John';
+  String? name2 = null;
+  print('name: ${name} with length ${name.length}');  
+  print(name2 ?? 'Default Name');
+  print(name.toUpperCase());
+  print(name.toLowerCase());
+
+  String? cache;
+  // assigning default value to cache if it is null
+  cache ??= 'Default Value';
+  print(cache);
+
+  final clinet = ApiClient();
+  clinet.configure('https://api.example.com');
+  print(clinet.baseUrl);
 }
