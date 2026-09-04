@@ -93,6 +93,14 @@ class ApiClient {
   }
 }
 
+// tuple return function
+(String, int) isAlive(){
+  return ('John', 30);
+}
+
+// arraow function
+String getFn() => 'Hello from const function';
+
 void main() {
   const p1 = ImmutablePoint(3, 4);
   const p2 = ImmutablePoint(1, 2);
@@ -132,4 +140,30 @@ void main() {
   final clinet = ApiClient();
   clinet.configure('https://api.example.com');
   print(clinet.baseUrl);
+
+  // needs to know when to use {} and when not to
+  name = '$name hello';
+  print(name);
+  print('length: ${name.length}');
+  print('\$12');
+  // multi line string
+  print('Hello \n World');
+  print('''Hello 
+  World''');
+
+
+  // difference between const and final
+  // const - compile time constant, cannot be changed, must be initialized at compile time
+  // final - run time constant, can be initialized at run time, but cannot be changed
+
+  // we can return two data types from a function using tuple
+  final (name3, age) = isAlive();
+  print('name: $name3, age: $age');
+
+  // anonymous function
+  () {
+    print('Hello from anonymous function');
+  }();
+
+  getFn();
 }
