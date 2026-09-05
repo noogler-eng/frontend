@@ -3,6 +3,8 @@
 
 // we can extend or implement the asbtract class in dart
 // override must be used to override the methods and variables of the abstract class
+// in implement we have to override all the methods and variables of the abstract class
+// in extend we can override the methods and variables of the abstract class but not necessary
 abstract class Engine {
   bool isEngineWorking = true;
   // we dont need to write a code block for this
