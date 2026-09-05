@@ -93,6 +93,14 @@ class ApiClient {
   }
 }
 
+// static class, cannot be instantiated, only static members
+// non static members cannot be accessed, 
+// only static members can be accessed from static methods
+class Constants {
+  static String greeting = 'Hello';
+  static String getMeGreeting() => greeting;
+}
+
 // tuple return function
 (String, int) isAlive(){
   return ('John', 30);
@@ -166,4 +174,6 @@ void main() {
   }();
 
   getFn();
+  print(Constants.greeting);
+  print(Constants.getMeGreeting());
 }
