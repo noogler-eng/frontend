@@ -1,3 +1,45 @@
+// multiple inheritance is not supported in dart but we 
+// can use mixins to achieve that
+
+// we can extend or implement the asbtract class in dart
+// override must be used to override the methods and variables of the abstract class
+abstract class Engine {
+  bool isEngineWorking = true;
+  // we dont need to write a code block for this
+  void accelerate();
+}
+
+class CarEngine implements Engine {
+  @override
+  bool isEngineWorking = true;
+
+  @override
+  void accelerate() {
+    print('Engine is working');
+  }
+}
+
+
+
+
+class A {
+  bool isEngineWorking = true;
+  void accelerate() {
+    print('Engine is working');
+  }
+}
+
+// we have to override the methods and variables of the class A in class B
+// implements means we are implementing the class A in class B
+class B implements A {
+  @override
+  bool isEngineWorking = true;
+
+  @override
+  void accelerate() {
+    print('Engine is working');
+  }
+}
 
 class Vehicle {
   int speed = 10;
