@@ -1,3 +1,6 @@
+// object is base class of all the classes in dart.
+// object is bace class of everythign except null.
+
 class Animal {
   void sound(){
     print('Animal sound');
@@ -65,7 +68,7 @@ void main(){
   // mixin
   // A mixin is a class that can be used to add functionality 
   // to another class. mixin dont created an parent child relationship.
-  
+  // good for code reusability. we can use multiple mixins in a class.
   final bird = Bird();
   bird.fly();
   bird.chirp();
