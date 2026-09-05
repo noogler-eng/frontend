@@ -24,6 +24,18 @@ class Dog extends Animal {
   }
 }
 
+
+abstract class Shape {
+  void draw();
+}
+
+class Circle extends Shape {
+  @override
+  void draw() {
+    print('Drawing a circle');
+  }
+}
+
 void main(){
   // DateTime is a class and now() is a static method of 
   // that class which returns the current date and time.
@@ -37,9 +49,36 @@ void main(){
   cat.sound();
 
   // 2. Abstraction
+  // Abstract class that cannot be instantiated.
+  // but we can create an object of the child class and
+  // assign it to the parent class.
+  Circle circle = Circle();
+  circle.draw();
+  Shape shape = Circle();
+  shape.draw();
+
+
   // 3. Inheritance
   // 4. Encapsulation
 
 
+  // mixin
+  // A mixin is a class that can be used to add functionality 
+  // to another class. mixin dont created an parent child relationship.
+  
+  final bird = Bird();
+  bird.fly();
+  bird.chirp();
+}
 
+mixin Flyable {
+  void fly() {
+    print('Flying');
+  }
+}
+
+class Bird with Flyable {
+  void chirp() {
+    print('Chirp');
+  }
 }
